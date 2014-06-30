@@ -1,0 +1,24 @@
+<ion-header-bar class="bar-assertive">
+
+    <h1 class="title">Sensor Tag Playground</h1>
+    <button class="button button-icon" ng-click="scanForDevices();rescan=!rescan;" ng-model="rescan">
+        <span id="rescanButtonId" class="icon" ng-class="{'ion-looping':rescan,'ion-loop':!rescan}"></span>
+    </button>
+
+
+</ion-header-bar>
+
+<ion-content>
+
+    <div class="list">
+        <div class="item item-divider">
+            Sensor Tags: {{devices.length}}
+        </div>
+
+        <a class="item" ui-sref="sensorTagDetail({'deviceId' : $index})" ng-repeat="device in DeviceService.getDevices()">
+            {{device.name}} // address: {{device.address}}
+        </a>
+    </div>
+
+</ion-content>
+
