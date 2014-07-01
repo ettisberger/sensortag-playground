@@ -37,6 +37,7 @@ var easyble = (function()
         evothings.ble.startScan(function(device)
             {
                 // Check if we already have got the device.
+
                 if (internal.knownDevices[device.address])
                 {
                     return;

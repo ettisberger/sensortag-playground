@@ -1,30 +1,38 @@
-factoryModule.factory('DeviceService', function () {
+factoryModule.factory('DeviceService',function () {
     var DeviceService = {};
-    var devices = [];
+    DeviceService.devices = [];
 
-    DeviceService.getDevice = function(index) {
-        return devices[index];
+    DeviceService.getDevice = function (index) {
+        return DeviceService.devices[index];
     }
 
-    DeviceService.addDevice = function(item) {
-        devices.push(item);
+    DeviceService.addDevice = function (item) {
+        DeviceService.devices.push(item);
     }
 
-    DeviceService.removeItem = function(item) {
-        devices.splice(devices.indexOf(item), 1)
+    DeviceService.removeItem = function (item) {
+        DeviceService.devices.splice(DeviceService.devices.indexOf(item), 1)
     }
 
-    DeviceService.size = function() {
-        return devices.length;
+    DeviceService.size = function () {
+        return DeviceService.devices.length;
     }
 
-    DeviceService.clear = function() {
-        devices = [];
+    DeviceService.clear = function () {
+        DeviceService.devices = [];
     }
 
-    DeviceService.getDevices = function() {
-        return devices;
+    DeviceService.getDevices = function () {
+        return DeviceService.devices;
+    }
+
+    DeviceService.closeConnections = function () {
+
+        for (var i = 0; i < DeviceService.devices.length; i++) {
+            DeviceService.devices[i].close();
+        }
     }
 
     return DeviceService;
+
 });

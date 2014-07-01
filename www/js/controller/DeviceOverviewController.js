@@ -2,6 +2,7 @@ controllerModule.controller('DeviceOverviewController', function($scope, DeviceS
 
     $scope.rescan = false;
     $scope.DeviceService = DeviceService;
+    $scope.DeviceService.devices = DeviceService.devices;
 
     var deviceIsSensorTag = function(device)
     {
@@ -22,37 +23,26 @@ controllerModule.controller('DeviceOverviewController', function($scope, DeviceS
             return;
         }
 
+        DeviceService.clear();
+
         console.log("Start scanning devices...");
 
-        DeviceService.addDevice(
+        easyble.startScan(
+            function(device)
             {
-            name : 'SensorTag1',
-            address : '1337'
+                console.log("found device with name " + device.name);
+                if (deviceIsSensorTag(device))
+                {
+                    $scope.$apply(function(){
+                        DeviceService.addDevice(device);
+                    });
+                }
+            },
+            function(errorCode)
+            {
+                console.log("error: " + errorCode);
             }
         );
-
-        DeviceService.addDevice(
-            {
-                name : 'SensorTag2',
-                address : '1338'
-            }
-        );
-
-//        easyble.startScan(
-//            function(device)
-//            {
-//                console.log("found device with name " + device.name);
-//                if (deviceIsSensorTag(device))
-//                {
-//                    DeviceService.addDevice(device);
-//                    $scope.$apply();
-//                }
-//            },
-//            function(errorCode)
-//            {
-//                console.log("error: " + errorCode);
-//            }
-//        );
 
     };
 

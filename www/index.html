@@ -8,6 +8,10 @@
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
+    <script>
+        var USE_MOCK_DATA = false;
+    </script>
+
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
@@ -22,10 +26,20 @@
     <script src="js/controller/DeviceOverviewController.js"></script>
     <script src="js/controller/DeviceDetailController.js"></script>
 
+    <!--  MOCK FILES-->
+    <script src="js/mock/DeviceMock.js"></script>
+    <script src="js/mock/EasyBleMock.js"></script>
+
+
   </head>
   <body ng-app="sensorTagPlayground">
-      <ion-nav-view animation="slide-left-right">
-          <!-- Center content -->
+
+      <ion-nav-bar class="nav-title-slide-ios7 bar-assertive">
+          <!--<ion-nav-back-button class="button-icon ion-arrow-left-c"></ion-nav-back-button>-->
+      </ion-nav-bar>
+
+      <ion-nav-view animation="fade-in">
+              <!-- Center content -->
       </ion-nav-view>
   </body>
 </html>
