@@ -16,7 +16,8 @@ controllerModule.controller('DeviceDetailController', function ($scope, $statePa
 
             function (errorCode) {
                 console.log("could not connect to device: " + errorCode);
-            });
+            }
+        );
     }
 
 

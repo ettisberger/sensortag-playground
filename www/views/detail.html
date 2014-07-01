@@ -8,9 +8,11 @@
           <ion-content>
               <div class="list">
                   <div class="item item-divider">
-                      Details
+                      Details for {{currentDevice.name}}
                   </div>
-                  Current Device: {{currentDevice.name}}
+                  <div class="item" ng-repeat="(key, value) in currentDevice">
+                      key: {{key}} // value: {{value}}
+                  </div>
               </div>
 
           </ion-content>

@@ -25,7 +25,7 @@ controllerModule.controller('DeviceOverviewController', function($scope, DeviceS
 
         DeviceService.clear();
 
-        console.log("Start scanning devices...");
+        console.debug("Start scanning devices...");
 
         easyble.startScan(
             function(device)

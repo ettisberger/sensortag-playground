@@ -5,6 +5,12 @@ var factoryModule = angular.module('sensorTagPlayground.factories', []);
 angular.module('sensorTagPlayground', ['ionic', controllerModule.name, stateModule.name, factoryModule.name])
 
 .run(function($ionicPlatform) {
+
+    console.log("###################");
+    console.log("START APPLICATION");
+    console.log("###################");
+
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)

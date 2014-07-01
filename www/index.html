@@ -8,12 +8,8 @@
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
-    <script>
-        var USE_MOCK_DATA = false;
-        console.log("###################");
-        console.log("START APPLICATION");
-        console.log("###################");
-    </script>
+    <!-- global app config-->
+    <script src="js/config.js"></script>
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
@@ -21,8 +17,11 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
-    <!-- your app's js -->
+    <!-- libs -->
     <script src="lib/ble/easy-ble.js"></script>
+
+    <!-- your app's js -->
+
     <script src="js/app.js"></script>
     <script src="js/state/states.js"></script>
 

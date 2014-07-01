@@ -193,7 +193,6 @@ var easyble = (function()
                 for (var i = 0; i < services.length; ++i)
                 {
                     var service = services[i];
-                    console.log("read service uuids " + service.uuid + " for device " + device.name);
                     device.__services.push(service);
                     device.__uuidMap[service.uuid] = service;
                 }
@@ -226,7 +225,6 @@ var easyble = (function()
                 for (var i = 0; i < characteristics.length; ++i)
                 {
                     var characteristic = characteristics[i];
-                    console.log("read characteristic " + characteristic + " for service " + service);
                     service.__characteristics.push(characteristic);
                     device.__uuidMap[characteristic.uuid] = characteristic;
 
