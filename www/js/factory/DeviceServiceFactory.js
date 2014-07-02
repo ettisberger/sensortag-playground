@@ -1,6 +1,7 @@
-factoryModule.factory('DeviceService',function () {
+factoryModule.factory('DeviceService', function () {
     var DeviceService = {};
     DeviceService.devices = [];
+    DeviceService.currentDevice = {};
 
     DeviceService.getDevice = function (index) {
         return DeviceService.devices[index];
@@ -24,6 +25,14 @@ factoryModule.factory('DeviceService',function () {
 
     DeviceService.getDevices = function () {
         return DeviceService.devices;
+    }
+
+    DeviceService.setCurrentDevice = function (device) {
+        DeviceService.currentDevice = device;
+    }
+
+    DeviceService.getCurrentDevice = function () {
+        return DeviceService.currentDevice;
     }
 
     DeviceService.closeConnections = function () {

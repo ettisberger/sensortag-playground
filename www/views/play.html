@@ -1,0 +1,14 @@
+<ion-view title="Playground">
+
+    <ion-nav-buttons side="left">
+        <button class="button button-icon ion-arrow-left-c" ng-click="backToHome()"></button>
+    </ion-nav-buttons>
+
+          <ion-content>
+              <div id="images">
+                <img ng-src="{{leftActivated && 'img/left-arrow-activated.png' || 'img/left-arrow.png'}}" class="arrow"/>
+                <img ng-src="{{rightActivated && 'img/right-arrow-activated.png' || 'img/right-arrow.png'}}" class="arrow"/>
+              </div>
+          </ion-content>
+
+      </ion-view>

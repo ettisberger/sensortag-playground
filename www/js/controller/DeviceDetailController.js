@@ -1,10 +1,11 @@
 controllerModule.controller('DeviceDetailController', function ($scope, $stateParams, DeviceService, TemperatureService, ButtonService, $ionicNavBarDelegate) {
 
-    $scope.DeviceService = DeviceService;
-    $scope.currentDevice = DeviceService.getDevice($stateParams.deviceId);
 
     $scope.init = function () {
 
+    $scope.DeviceService = DeviceService;
+    $scope.currentDevice = DeviceService.getDevice($stateParams.deviceId);
+    DeviceService.setCurrentDevice($scope.currentDevice);
 
         // connect to device
         $scope.currentDevice.connect(
@@ -23,7 +24,7 @@ controllerModule.controller('DeviceDetailController', function ($scope, $statePa
 
     $scope.initServices = function () {
         //TemperatureService.startService($scope.currentDevice, 500, temperatureNotification);
-        ButtonService.startService($scope.currentDevice, buttonNotification);
+        //ButtonService.startService($scope.currentDevice, buttonNotification);
     }
 
     $scope.backToHome = function () {
@@ -31,8 +32,6 @@ controllerModule.controller('DeviceDetailController', function ($scope, $statePa
         $scope.currentDevice.close();
         $ionicNavBarDelegate.back();
     }
-
-    $scope.init();
 
     function temperatureNotification(data) {
         var dataArray = new Int16Array(data);
@@ -44,5 +43,7 @@ controllerModule.controller('DeviceDetailController', function ($scope, $statePa
 
         console.log('Button Notifcation - Button : '+ dataArray[0]);
     }
+
+    $scope.init();
 
 });

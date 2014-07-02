@@ -12,5 +12,10 @@ stateModule.config(function($stateProvider, $urlRouterProvider){
             url: '/home',
             templateUrl: 'views/home.html',
             controller: 'DeviceOverviewController'
+    })
+        .state('sensorTagPlay', {
+            url: '/play',
+            templateUrl: 'views/play.html',
+            controller: 'PlayController'
     });
 });

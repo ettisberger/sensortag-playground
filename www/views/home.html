@@ -13,12 +13,32 @@
 
         <div class="list">
             <div class="item item-divider">
-                Sensor Tags: {{devices.length}}
+                Sensor Tags
             </div>
 
-            <a class="item" ui-sref="sensorTagDetail({'deviceId' : $index})" ng-repeat="device in DeviceService.devices">
-                {{device.name}} // address: {{device.address}}
-            </a>
+            <div ng-repeat="device in DeviceService.devices">
+                    <div class="item">
+                        <div class="row">
+                            <div class="col col-75">
+                                <h2>{{device.name}}</h2>
+                                <p>Address: {{device.address}}</p>
+                            </div>
+
+                            <!--<div class="col">-->
+                                <!--<button class="button button-small button-dark" ng-click="connectDevice($index)">-->
+                                    <!--{{buttonConnectText}}-->
+                                <!--</button>-->
+                            <!--<br>-->
+                            <br>
+                                <button class="button button-small button-dark" ui-sref="sensorTagDetail({'deviceId' : $index})">
+                                        Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
 
     </ion-content>

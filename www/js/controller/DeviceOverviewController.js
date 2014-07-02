@@ -1,6 +1,9 @@
 controllerModule.controller('DeviceOverviewController', function($scope, DeviceService) {
 
     $scope.rescan = false;
+    $scope.connected = false;
+    $scope.buttonConnectText = "Connect";
+
     $scope.DeviceService = DeviceService;
     $scope.DeviceService.devices = DeviceService.devices;
 
@@ -45,5 +48,28 @@ controllerModule.controller('DeviceOverviewController', function($scope, DeviceS
         );
 
     };
+
+//    $scope.connectDevice = function (index) {
+//
+//
+//        console.log("index" + index);
+//
+//        var device = DeviceService.getDevice(index);
+//
+//        device.connect(
+//
+//            function (device) {
+//                console.log("Added connected device: " + device.name);
+//                //$scope.initServices();
+//                $scope.buttonConnectText = "Disconnect";
+//
+//
+//            },
+//
+//            function (errorCode) {
+//                console.log("could not connect device: " + errorCode);
+//            }
+//        );
+//    }
 
 });
