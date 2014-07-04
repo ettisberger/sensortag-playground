@@ -4,11 +4,36 @@
         <button class="button button-icon ion-arrow-left-c" ng-click="backToHome()"></button>
     </ion-nav-buttons>
 
+    <ion-nav-buttons side="right">
+        <button ng-show="!gameInProgress" class="button button-icon ion-game-controller-b" ng-click="startGame()">new game</button>
+        <button ng-show="gameInProgress" class="button button-icon ion-game-controller-b" ng-click="stopGame()">stop game</button>
+    </ion-nav-buttons>
+
           <ion-content>
-              <div id="images">
+              <div class="center">
+                <h1>
+                {{ !gameLost && 'LETS GO' || gameLost && '=(' }}
+                </h1>
+
+                <img ng-class="fadeClass" ng-src="{{playArrow == Enum.ARROW.LEFT && 'img/left-arrow.png' || playArrow == Enum.ARROW.RIGHT && 'img/right-arrow.png' || playArrow == Enum.ARROW.BOTH && 'img/both-arrow.png' || playArrow == Enum.ARROW.NON && 'img/placeholder-arrow.png' }}" />
+                <h1>Correct: {{ arrowCounter }}</h1>
+
+              </div>
+
+              <div class="center">
                 <img ng-src="{{leftActivated && 'img/left-arrow-activated.png' || 'img/left-arrow.png'}}" class="arrow"/>
                 <img ng-src="{{rightActivated && 'img/right-arrow-activated.png' || 'img/right-arrow.png'}}" class="arrow"/>
               </div>
+
+              <!--<div class="center" ng-switch on="arrowCorrect">-->
+                  <!--<div ng-switch-when=”true”>-->
+                      <!--<i class="radio-icon ion-checkmark-round"></i>-->
+                  <!--</div>-->
+                  <!--<div ng-switch-default>-->
+                      <!--<i class="radio-icon ion-close-round"></i>-->
+                  <!--</div>-->
+              <!--</div>-->
+
           </ion-content>
 
       </ion-view>

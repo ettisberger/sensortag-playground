@@ -1,24 +1,48 @@
 /* Sensor Tag CSS*/
 
-.wrapper {
-    /*position: relative;*/
-    /*top: 50%;*/
-    /*left: 50%;*/
-    width: 250px;
-    height: 250px;
-    /*margin-top: -250px; *//* Half the height */
-    /*margin-left: -250px; *//* Half the width */
-}
-
 /* class */
 .arrow {
     width: 150px;
     height: 150px;
     display: inline-block;
-    margin: 50% auto auto;
+    margin: 15% auto auto;
+}
+
+.playArrow {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    margin: 10% auto auto;
+}
+
+.center{
+    text-align:center;
+}
+
+.fade {
+    opacity: 0;
+    -webkit-transition: opacity 0.1s ease-in;
+    -moz-transition: opacity 0.1s ease-in;
+    -o-transition: opacity 0.1s ease-in;
+    -ms-transition: opacity 0.1s ease-in;
+    transition: opacity 0.1s ease-in;
+}
+.fade.in{
+    opacity: 1;
+}
+
+.base-class {
+    -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+
+.base-class.my-class {
+    color: red;
+    font-size:3em;
 }
 
 /* id */
-#images{
-    text-align:center;
-}
+/*#center{*/
+    /*text-align:center;*/
+/*}*/
+

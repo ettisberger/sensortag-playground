@@ -28,7 +28,7 @@ controllerModule.controller('DeviceOverviewController', function($scope, DeviceS
 
         DeviceService.clear();
 
-        console.debug("Start scanning devices...");
+        console.debug("DeviceOverviewController :: scanForDevices - Start scanning devices...");
 
         easyble.startScan(
             function(device)
@@ -43,7 +43,7 @@ controllerModule.controller('DeviceOverviewController', function($scope, DeviceS
             },
             function(errorCode)
             {
-                console.log("error: " + errorCode);
+                console.log("DeviceOverviewController :: scanForDevices - Error: " + errorCode);
             }
         );
 

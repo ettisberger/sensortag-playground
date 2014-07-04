@@ -38,7 +38,7 @@ factoryModule.factory('DeviceService', function () {
     DeviceService.closeConnections = function () {
 
         for (var i = 0; i < DeviceService.devices.length; i++) {
-            console.log("close connection for device " + DeviceService.devices[i].name);
+            console.log("DeviceService :: closeConnections - Close connection for device " + DeviceService.devices[i].name);
             DeviceService.devices[i].close();
         }
     }

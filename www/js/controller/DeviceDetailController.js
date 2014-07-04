@@ -11,12 +11,12 @@ controllerModule.controller('DeviceDetailController', function ($scope, $statePa
         $scope.currentDevice.connect(
 
             function (device) {
-                console.log("connected to device: " + device.name);
+                console.log("DeviceDetailController :: init - Connected to device: " + device.name);
                 $scope.initServices();
             },
 
             function (errorCode) {
-                console.log("could not connect to device: " + errorCode);
+                console.log("DeviceDetailController :: init - Could not connect to device: " + errorCode);
             }
         );
     }
@@ -28,7 +28,7 @@ controllerModule.controller('DeviceDetailController', function ($scope, $statePa
     }
 
     $scope.backToHome = function () {
-        console.log("close connection for current device " + $scope.currentDevice.name);
+        console.log("DeviceDetailController :: backToHome - Close connection for current device " + $scope.currentDevice.name);
         $scope.currentDevice.close();
         $ionicNavBarDelegate.back();
     }

@@ -9,7 +9,7 @@ factoryModule.factory('ButtonService', function () {
             new Uint8Array([1,0]),
             function()
             {
-                console.log('Descriptor for button service ok');
+//                console.log('Descriptor for button service ok');
             },
             function(){
                 console.log('Error setting descriptor for button service');
@@ -20,7 +20,6 @@ factoryModule.factory('ButtonService', function () {
             '0000ffe1-0000-1000-8000-00805f9b34fb',
             function(data)
             {
-                console.log("Send notification for button service");
                 notificationCallback(data);
             },
             function(errorCode)
@@ -34,7 +33,6 @@ factoryModule.factory('ButtonService', function () {
         device.readServices(
             ['0000ffe0-0000-1000-8000-00805f9b34fb'],
             function () {
-                console.log("Read button service for device " + device.name);
                 enableButtonNotification(device, notificationCallback);
             },
             function (errorCode) {
